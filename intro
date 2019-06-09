@@ -1,0 +1,34 @@
+-----  Copyright © 2018 Stefan Stefanov All Rights Reserved 
+
+
+-----  Stefan Stefanov 
+-----  15/07/2018
+
+-----   GOAL: TO CREATE DATABASE OF THE CLIENTS IN FINANCIAL COMPANY OPERATING ON 
+-----   THE FINANCIAL MARKET (FOREX, BINARY OPTION)
+
+-----   SUMMARY:
+-----   11 tables with information for the clients. 
+------  TABLE 1 CUSTOMERS: with general details for each client (first name, last_name, country, language, citizenship, gender,
+------  birthday, address, city, phone, email, ip address). PK - CUSTID
+------  TABLE 2 RISK: includes information regarding risky clients and blacklisted clients 
+------  TABLE 3 JOINT_ACCOUNT: if the client has joint account with another client and if it is active or inactive 
+------  TABLE 4 HISTORY: history interactions like calls, emails, chats of the client 
+------  TABLE 5 DOCUMENTS: all kind of document for the client ( Proof of Identity(POI): Passport, ID card, Driving License, Residence
+------  Permit; Proof of Residence(POR): Utility Bill, Bank Statement, National Health/Pension Insurance, etc.; Credit Card and Credit 
+------  Card Statement of the client; Proof of Deposit; Proof of Bank Account; Other - additional documents
+------  TABLE 6 DEPOSITS: the deposits that the client made in his account 
+------  TABLE 7 WITHDRAWALS: the withdrawals that the client made in his account 
+------  TABLE 8 TRADING PLATFORMS: information about the trading platform of the client 
+------  TABLE 9 COMPLIANCE: all the compliance related stuffs like FATCA, GDPR, PEP, Anti-Money Laundering, Tax Identification Number
+------  TABLE 10 Bonuses: all the bonuses the customer has 
+------  TABLE 11 FRAUDS: includes fraud related clients and fraud rings. 
+
+------ DB OBJECTS:
+------ 11 TABLES + CONSTRAINTS 
+------ 11 SEQUENCES 
+------ DATA IN ALL THE TABLES 
+------ 26 VIEWS 
+------ 5  TRIGGERS 
+------ 6  INDEXES
+------ 4  FUNCTIONS + PL/SQL LANGUAGE
