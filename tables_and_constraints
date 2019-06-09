@@ -1,0 +1,163 @@
+
+create table test5 (
+    test_id    number not null,
+    test_name  varchar2(100) not null, 
+    constraint test5_pk primary key (test_id)
+
+);
+
+----- TABLES AND CONSTRAINTS 
+
+create table risk (
+    riskid            number not null,
+    deposit_allowed   varchar2(100),
+    blacklisted       varchar2(50),
+    dealing_risk      varchar2(50),
+    constraint risk_pk primary key (riskid)
+
+); 
+
+create table joint_account (
+    jaid             number not null, 
+    status           varchar2(100) not null, 
+    with_custid      number,
+    constraint joint_account_pk primary key (jaid)
+
+); 
+
+create table history (
+    historyid        number not null,
+    history_date     date, 
+    history_type     varchar2(100),
+    history_comment  varchar2(500), 
+    constraint history_pk  primary key (historyid)
+
+);
+
+create table documents (
+   docid  number not null, 
+   poi    varchar2(100), 
+   por    varchar2(100),
+   cc     varchar2(50), 
+   ccs    varchar2(50),
+   pod    varchar2(50), 
+   poba   varchar2 (50),
+   other  varchar2 (100),
+   constraint documents_pk primary key (docid)
+
+);
+
+create table deposits ( 
+   depositid       number not null, 
+   deposit_date    date,
+   deposit_status  varchar2(100),
+   deposit_amount  number (10,2),
+   currency        varchar2(50),
+   method          varchar2(200),
+   deposit_comment varchar2(500),
+   constraint deposits_pk primary key (depositid)
+   
+);
+
+create table withdrawals ( 
+   wdid               number not null, 
+   withdrawal_date    date, 
+   withdrawal_status  varchar2(50),
+   withdrawal_amount  number (7,2),
+   currency           varchar2(50),
+   method             varchar2(200),
+   withdrawal_comment varchar2(500),
+   constraint withdrawals_pk primary key (wdid)
+
+);
+
+create table trading_platforms (
+   tpid              number not null, 
+   status            varchar2 (50),
+   currency          varchar2 (50), 
+   type              varchar2 (100),
+   constraint trading_platforms_pk primary key (tpid)
+
+);
+
+create table compliance (
+   complid   number not null, 
+   status    varchar2(100), 
+   fatca     varchar2(50),
+   gdpr      varchar2(50),
+   pep       varchar2(50),
+   aml       varchar2(50),
+   tandc     varchar2(50),
+   tin       varchar2(50), 
+   constraint compliance_pk primary key (complid)
+
+);
+
+create table bonuses   (
+  bonusid            number not null,
+  currency           varchar2(10),
+  ftd_bonus          number,
+  compl_bonus        number, 
+  xmas_bonus         number,
+  one_thousand_bonus number,
+  ten_thousand_bonus number,
+  constraint bonuses_pk primary key (bonusid)
+
+);
+
+create table frauds  (
+   fraudid        number not null,
+   fraud_status   varchar2(50),
+   fraud_reason   varchar2(100), 
+   fraud_comment  varchar2(500), 
+   constraint frauds_pk primary key (fraudid)
+
+);
+
+create table customers  (
+   custid      number not null, 
+   first_name  varchar2(100), 
+   last_name   varchar2(100), 
+   country     varchar2(100),
+   language    varchar2(50),
+   citizenship varchar2(50),
+   gender      varchar2(50),
+   birthday    date,
+   address     varchar2 (500),
+   city        varchar2 (100),
+   phone       varchar2 (100), 
+   email       varchar2(100),
+   ip          varchar2(100), 
+   riskid      number not null, 
+   jaid        number not null, 
+   historyid   number not null,
+   docid       number not null,
+   depositid   number not null, 
+   wdid        number not null, 
+   tpid        number not null, 
+   complid     number not null,
+   bonusid     number not null, 
+   fraudid     number not null, 
+   constraint  customers_pk primary key (custid),
+   constraint  customers_risk_fk foreign key (riskid)
+   references  risk  (riskid),
+   constraint  customers_joint_account_fk foreign key (jaid)
+   references  joint_account (jaid),
+   constraint  customers_history_fk foreign key (historyid)
+   references  history (historyid),
+   constraint  customer_documents_fk foreign key (docid)
+   references  documents (docid),
+   constraint  customer_deposits_fk foreign key (depositid)
+   references  deposits (depositid),
+   constraint  customers_withdrawals_fk foreign key (wdid)
+   references  withdrawals (wdid),
+   constraint  customers_trading_platforms_fk foreign key (tpid)
+   references  trading_platforms (tpid),
+   constraint  customers_compliance_fk foreign key (complid)
+   references  compliance (complid),
+   constraint  customers_bonuses_fk foreign key (bonusid)
+   references  bonuses (bonusid),
+   constraint  customers_frauds_fk foreign key (fraudid)
+   references  frauds (fraudid)
+   
+);
