@@ -1,0 +1,94 @@
+-----  REPORT 1 
+-----  VIEW6 VW6_BLACKLISTED_CUSTOMERS    SELECTION FROM CUSTOMERS  AND RISKT 
+-----  SHOW US: CLIENTS THAT ARE BLACKLISTED AND CANT DEPOSIT IN THEIR ACCOUNT 
+ 
+CREATE OR REPLACE VIEW VW6_BLACKLISTED_CUSTOMERS AS 
+    select c.custid, c.first_name, c.last_name,
+           r.blacklisted, r.deposit_allowed,
+           c.email, c.phone
+    from   customers C 
+    join   risk R on c.riskid = r.riskid
+    where blacklisted = 'Yes' and deposit_allowed = 'No'
+;
+select *
+from vw6_blacklisted_customers
+;
+
+----- REPORT 2 
+----- VIEW10 VW10_APPROVED_DEPOSITS  SELECTION FROM CUSTOMERS, DEPOSITS
+----- SHOW US: CLIENTS WITH APPROVED DEPOSITS ORDERED BY DATE 
+
+CREATE OR REPLACE VIEW VW10_APPROVED_DEPOSITS AS
+   select c.first_name, c.last_name, 
+          d.deposit_date, d.deposit_amount, d.currency, d.deposit_status
+   from  customers C
+   join  deposits D    on c.depositid = d.depositid
+   where d.deposit_status = 'Approved' 
+   order by d.deposit_date
+;
+select *
+from vw10_approved_deposits
+;
+select sum(deposit_amount)
+from vw10_approved_deposits
+----- APPROVED DEPOSITS 164950
+;
+select sum(deposit_amount)
+from vw10_approved_deposits
+where currency = 'EUR'
+
+
+----- REPORT 3 
+----- VIEW12   VW12_APPROVED_WITHDRAWALS  SELECTION FROM CUSTOMERS AND WITHDRAWALS 
+----- SHOW US: THE APPROVED WITHDRAWALS OF THE CLIENTS 
+
+CREATE OR REPLACE VIEW VW12_APPROVED_WITHDRAWALS AS 
+select c.first_name, c.last_name, 
+       wd.withdrawal_date, wd.withdrawal_status, wd.withdrawal_amount, wd.currency
+from withdrawals WD
+join customers C on wd.wdid = c.wdid
+where wd.withdrawal_status = 'Approved'
+order by wd.withdrawal_date 
+;
+select *
+from vw12_approved_withdrawals
+;
+select sum(withdrawal_amount)
+from vw12_approved_withdrawals
+----- APPROVED WITHDRAWALS 77000
+;
+
+
+----- REPORT 4 
+----- VIEW18  VW18_COMPLIANT_CLIENTS    SELECTION FROM CUSTOMERS , COMPLIANCE AND DOCUMENTS 
+----- SHOW US: ALL THE CLIENTS THAT ARE COMPLIANT  
+
+CREATE OR REPLACE VIEW VW18_COMPLIANT_CLIENTS AS 
+    select c.custid, c.first_name, c.last_name, 
+           com.status,
+           d.poi, d.por, d.cc
+    from documents D
+    join customers C  on d.docid = c.docid
+    join compliance COM on c.complid = com.complid
+    where com.status = 'Compliant'
+;
+
+select *
+from vw18_compliant_clients 
+;
+
+
+----- REPORT 5 
+----- VIEW25  VW25_FRAUD_CLIENTS    SELECTION FROM CUSTOMERS AND FRAUDS 
+----- SHOW US: THE FRAUD CLIENTS 
+
+CREATE OR REPLACE VIEW VW25_FRAUD_CLIENTS AS 
+   select c.custid, c.first_name, c.last_name,
+          f.fraud_status, f.fraud_reason, f.fraud_comment
+   from   frauds F 
+   join customers C on f.fraudid = c.fraudid
+   where f.fraud_status = 'Yes'
+;
+select *
+from vw25_fraud_clients 
+;
