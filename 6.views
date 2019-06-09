@@ -1,0 +1,410 @@
+
+----- VIEWS 
+
+select * from customers
+;
+----- VIEW1 VW1_CUST_INFO  SELECTION FROM CUSTOMERS
+
+CREATE OR REPLACE VIEW VW1_CUST_INFO  AS
+   select custid, first_name, last_name, country, 
+          language, citizenship, gender, 
+          birthday, city, phone, email
+   from customers
+;
+select *
+from vw1_cust_info
+;
+
+----- VIEW2 VIEW IN VIEW VW2_CUST_INFO_ENGLISH SELECTION FROM CUSTOMERS
+
+CREATE OR REPLACE VIEW  VW2_CUST_INFO_ENGLISH AS
+    select custid, first_name, last_name, 
+           country, language, citizenship,  
+           city, phone, email
+    from VW1_CUST_INFO
+    where language = 'English'
+;
+select *
+from vw2_cust_info_english
+;
+
+----- VIEW3 VIEW IN VIEW IN VIEW   VW3_CUST_INFO_LONDON_MELBOURNE  SELECTION FROM CUSTOMERS
+
+CREATE OR REPLACE VIEW VW3_CUST_INFO_LONDON_MELBOURNE AS
+    select custid, first_name, last_name,
+           city, phone, email
+    from VW2_CUST_INFO_ENGLISH
+    where city = 'London' or city = 'Melbourne'
+;
+select *
+from vw3_cust_info_london_melbourne
+;
+
+----- VIEW4 VW4_CUST_INFO_SPANISH  SELECTION FROM CUSTOMERS
+
+CREATE OR REPLACE VIEW VW4_CUST_INFO_SPANISH AS 
+      select first_name, last_name, country, language,
+             citizenship, email, phone
+      from  customers
+      where language = 'Spanish'
+;
+select *
+from vw4_cust_info_spanish
+;
+
+----- VIEW5 VW5_CUST_INFO_SOFIA  SELECTION FROM CUSTOMERS
+
+CREATE OR REPLACE VIEW VW5_CUST_INFO_SOFIA AS
+    select custid, first_name, last_name, 
+           city, address, phone
+    from customers
+    where city = 'Sofia'
+;
+select *
+from vw5_cust_info_sofia
+;
+
+-----  REPORT 1 
+-----  VIEW6 VW6_BLACKLISTED_CUSTOMERS    SELECTION FROM CUSTOMERS  AND RISKT 
+-----  SHOW US: CLIENTS THAT ARE BLACKLISTED AND CANT DEPOSIT IN THEIR ACCOUNT 
+ 
+CREATE OR REPLACE VIEW VW6_BLACKLISTED_CUSTOMERS AS 
+    select c.custid, c.first_name, c.last_name,
+           r.blacklisted, r.deposit_allowed,
+           c.email, c.phone
+    from   customers C 
+    join   risk R on c.riskid = r.riskid
+    where blacklisted = 'Yes' and deposit_allowed = 'No'
+;
+select *
+from vw6_blacklisted_customers
+;
+
+----- VIEW7  VW7_BLACKLISTED_TPLATFORMS  SELECTION FROM CUSTOMERS,RISK,TRADING PLATFORMS
+----- SHOW US: CLIENT THAT ARE BLACKLISTED  AND IF THEIR TRADING PLATFORMS ARE ALLOWED/DISALLOWED
+----- CLIENTS WITH CUSTID 1010, 1025, 1030 ARE WITH ACTIVE PLATFORMS AND THEY SHoULD BE INACTIVE
+
+CREATE OR REPLACE VIEW VW7_BLACKLISTED_TPLATFORMS AS 
+    select c.custid, r.blacklisted, r.deposit_allowed,
+           tp.status
+    from   customers C 
+    join   risk R               on c.riskid = r.riskid
+    join   trading_platforms TP on c.tpid = tp.tpid
+    where blacklisted = 'Yes' and deposit_allowed = 'No'
+;
+select *
+from vw7_blacklisted_tplatforms
+;
+
+----- VIEW8 VW8_JOINT_ACCOUNTS   SELECTION FROM CUSTOMERS, JOINT ACCOUNT, DEPOSITS AND WITHDRAWALS 
+----- SHOW US: CLIENTS WITH JOINT ACCOUNT AND DEPOSITS, WITHDRAWALS THAT THEY MADE 
+
+CREATE OR REPLACE VIEW VW8_JOINT_ACCOUNTS AS 
+   select c.first_name, c.last_name, 
+          ja.status, ja.with_custid,
+          d.deposit_amount, w.withdrawal_amount
+   from customers C
+   left join joint_account JA on c.jaid = ja.jaid
+   left join deposits D on c.depositid = d.depositid
+   left join withdrawals W on c.wdid = w.wdid
+   where ja.status = 'Active' or ja.status = 'Inactive'
+;
+select *
+from vw8_joint_accounts
+;
+
+----- VIEW9 VW9_HISTORY_CALLS   SELECTION FROM CUSTOMERS AND HISTORY 
+----- SHOW US: CLIENTS WITH PHONE CALLS 
+
+CREATE OR REPLACE VIEW VW9_HISTORY_CALLS AS 
+    select c.last_name, c.gender, 
+           h.history_date, h.history_type, h.history_comment 
+    from customers C 
+    join history H  on c.historyid = h.historyid 
+    where h.history_type = 'Call'
+    order by h.history_date
+;
+select *
+from vw9_history_calls
+;
+
+----- REPORT 2 
+----- VIEW10 VW10_APPROVED_DEPOSITS  SELECTION FROM CUSTOMERS, DEPOSITS
+----- SHOW US: CLIENTS WITH APPROVED DEPOSITS ORDERED BY DATE 
+
+CREATE OR REPLACE VIEW VW10_APPROVED_DEPOSITS AS
+   select c.first_name, c.last_name, 
+          d.deposit_date, d.deposit_amount, d.currency, d.deposit_status
+   from  customers C
+   join  deposits D    on c.depositid = d.depositid
+   where d.deposit_status = 'Approved' 
+   order by d.deposit_date
+;
+select *
+from vw10_approved_deposits
+;
+select sum(deposit_amount)
+from vw10_approved_deposits
+----- APPROVED DEPOSITS 164950
+;
+select sum(deposit_amount)
+from vw10_approved_deposits
+where currency = 'EUR'
+;
+----- VIEW11  VW11_FAILED_DEPOSITS  SELECTION FROM CUSTOMERS AND DEPOSITS 
+----- SHOW US: ALL FAILED DEPOSITS WITH CUSTOMERID 
+
+CREATE OR REPLACE VIEW VW11_FAILED_DEPOSITS AS
+select c.custid, d.deposit_status, d.deposit_amount, d.currency 
+from deposits D
+join customers C on d.depositid = c.depositid
+where deposit_status = 'Failed'
+;
+select *
+from vw11_failed_deposits
+;
+
+----- REPORT 3 
+----- VIEW12   VW12_APPROVED_WITHDRAWALS  SELECTION FROM CUSTOMERS AND WITHDRAWALS 
+----- SHOW US: THE APPROVED WITHDRAWALS OF THE CLIENTS 
+
+CREATE OR REPLACE VIEW VW12_APPROVED_WITHDRAWALS AS 
+select c.first_name, c.last_name, 
+       wd.withdrawal_date, wd.withdrawal_status, wd.withdrawal_amount, wd.currency
+from withdrawals WD
+join customers C on wd.wdid = c.wdid
+where wd.withdrawal_status = 'Approved'
+order by wd.withdrawal_date 
+;
+select *
+from vw12_approved_withdrawals
+;
+select sum(withdrawal_amount)
+from vw12_approved_withdrawals
+----- APPROVED WITHDRAWALS 77000
+;
+
+----- VIEW13 VW13_PENDING_WITHDRAWALS SELECTION FROM WITHDRAWALS 
+----- SHOW US: THE PENDING WITHDRAWALS 
+
+CREATE OR REPLACE VIEW VW13_PENDING_WITHDRAWALS AS
+select c.custid,
+       wd.withdrawal_date, wd.withdrawal_status, wd.withdrawal_amount, wd.currency, wd.method
+from withdrawals WD
+join customers C on wd.wdid = c.wdid
+where withdrawal_status = 'Pending'
+order by wd.withdrawal_date
+;
+select *
+from vw13_pending_withdrawals
+;
+
+----- VIEW14 VW14_DEP_AND_WITHDR    SELECTION FROM CUSTOMERS, DEPOSITS, WITHDRAWALS
+----- SHOW US: THE DEPOSITS AND WITHDRAWALS OF ALL CLIENTS 
+
+CREATE OR REPLACE VIEW VW14_DEP_AND_WITHDR AS 
+    select c.first_name, c.last_name, 
+           d.deposit_status, d.deposit_amount,
+           wd.withdrawal_status, wd.withdrawal_amount, wd.currency
+    from customers C
+    left join deposits D on c.depositid = d.depositid
+    left join withdrawals WD on c.wdid = wd.wdid
+;
+select *
+from vw14_dep_and_withdr
+;
+----- VIEW15 VW15_BANK_WIRE_WITHDRAWALS  SELECTION FROM CUSTOMERS AND WITHDRAWALS 
+----- SHOW US: THE CLIENTS WITH BANK WIRE WITHDRAWALS 
+
+CREATE OR REPLACE VIEW VW15_BANK_WIRE_WITHDRAWALS AS 
+   select c.last_name, c.language, c.gender, c.phone, c.email,
+          wd.withdrawal_status, wd.withdrawal_amount, wd.currency, wd.method
+   from  withdrawals WD 
+   join  customers C on c.wdid = wd.wdid
+   where wd.method = 'Bank wire'
+   order by last_name asc
+;
+select *
+from vw15_bank_wire_withdrawals
+;
+
+----- VIEW16  VW16_ID_CARD_DOCS   SELECTION FROM CUSTOMERS AND DOCUMENTS 
+----- SHOW US: ALL THE CLIENTS THAT HAVE ID CARD 
+
+CREATE OR REPLACE VIEW VW16_ID_CARD_DOCS AS 
+   select c.custid,
+          d.poi, d.por 
+   from  documents D 
+   join  customers C on d.docid = c.docid
+   where d.poi = 'ID card'
+;
+select *
+from vw16_id_card_docs
+;
+
+----- VIEW17  VW17_CC_DOCS   SELECTION FROM CUSTOMERS AND DOCUMENTS 
+----- SHOW US: ALL CREDIT CARDS 
+
+
+CREATE OR REPLACE VIEW VW17_CC_DOCS AS 
+   select c.custid, c.first_name, c.last_name, 
+          d.cc, d.other 
+   from  documents D
+   join  customers C on d.docid = c.docid 
+   where d.cc <> 'No'
+   or d.other like '%CC%'
+;
+select *
+from vw17_cc_docs 
+;
+
+----- REPORT 4 
+----- VIEW18  VW18_COMPLIANT_CLIENTS    SELECTION FROM CUSTOMERS , COMPLIANCE AND DOCUMENTS 
+----- SHOW US: ALL THE CLIENTS THAT ARE COMPLIANT  
+
+CREATE OR REPLACE VIEW VW18_COMPLIANT_CLIENTS AS 
+    select c.custid, c.first_name, c.last_name, 
+           com.status,
+           d.poi, d.por, d.cc
+    from documents D
+    join customers C  on d.docid = c.docid
+    join compliance COM on c.complid = com.complid
+    where com.status = 'Compliant'
+;
+
+select *
+from vw18_compliant_clients 
+;
+
+
+----- VIEW19  VW19_CLIENTS_WITHOUT_DOCS    SELECTION FROM CUSTOMERS, DOCUMENTS, COMPLIANCE 
+----- SHOW US: THE CLIENTS WHO DONT HAVE ONE OF THE REQUIRED DOCUMENTS 
+
+CREATE OR REPLACE VIEW VW19_CLIENTS_WITHOUT_DOCS AS 
+    select c.custid, c.first_name, c.last_name, 
+           d.poi, d.por, d.cc,
+           com.status,
+           c.email, c.phone
+    from documents D
+    join customers C on d.docid = c.docid 
+    join compliance COM on c.complid = com.complid
+    where d.poi = 'No' or d.por = 'No' or d.cc = 'No'
+    order by c.first_name asc
+;
+select *
+from vw19_clients_without_docs
+;
+
+----- VIEW20 VW20_NON_COMPLIANT_CLIENTS  SELECTION FROM CUSTOMERS AND COMPLIANCE 
+----- SHOW US: THE CLIENTS WHICH ARE NOT COMPLIANT 
+
+CREATE OR REPLACE VIEW VW20_NON_COMPLIANT_CLIENTS AS 
+    select c.custid, c.first_name, c.last_name, 
+           com. status,
+           c.country, c.language, c.phone, c. email 
+    from  compliance COM 
+    join  customers C on com.complid = c.complid
+    where com.status = 'Non Compliant'
+;
+select *
+from vw20_non_compliant_clients 
+;
+
+
+----- VIEW21 VW21_GDPR_NO    SELECTION FROM COMPLIANCE 
+----- SHOW US: THE CLIENTS WHO HASNT ACCEPTED GDPR 
+
+CREATE OR REPLACE VIEW VW21_GDPR_NO AS 
+   select c.first_name, c.last_name,
+          com.gdpr, com.fatca,
+          c.email, c.phone 
+   from  compliance COM 
+   join  customers C on com.complid = c.complid
+   where com.gdpr = 'No' 
+;
+select *
+from vw21_gdpr_no 
+;
+
+----- VIEW22 VW22_FATCA_YES    SELECTION FROM COMPLIANCE 
+----- SHOW US: THE CLIENTS THAT ARE FATCA 
+
+CREATE OR REPLACE VIEW VW22_FATCA_YES AS 
+  select c.first_name, c.last_name,
+         com.fatca, com.gdpr,
+         c.email, c.phone 
+  from  compliance COM 
+  join  customers C on com.complid = c.complid
+  where com.fatca = 'Yes' 
+;
+select *
+from vw22_fatca_yes 
+;
+
+----- VIEW23 VW23_AML_HIGH   SELECTION FROM COMPLIANCE 
+----- SHOW US: THE CLIENTS WITH AML STATUS HIGH 
+
+CREATE OR REPLACE VIEW VW23_AML_HIGH AS 
+   select c.first_name, c.last_name,
+          com.aml, com.tin,
+          c.country, c.address, c.city
+   from compliance COM 
+   join customers C on com.complid = c.complid
+   where com.aml = 'High'
+;
+select *
+from vw23_aml_high
+;
+
+----- VIEW24 VW24_BONUSES   SELECTION FROM BONUSES 
+----- SHOW US: THE CLIENTS WITH BIG BONUSES 
+
+
+CREATE OR REPLACE VIEW VW24_BONUSES AS 
+   select c.custid,c.first_name, c.last_name,
+          b.one_thousand_bonus, b.ten_thousand_bonus
+   from customers C 
+   join bonuses B on  c.bonusid = b.bonusid
+   where b.one_thousand_bonus is not null
+
+;
+select *
+from vw24_bonuses 
+;
+
+----- REPORT 5 
+----- VIEW25  VW25_FRAUD_CLIENTS    SELECTION FROM CUSTOMERS AND FRAUDS 
+----- SHOW US: THE FRAUD CLIENTS 
+
+CREATE OR REPLACE VIEW VW25_FRAUD_CLIENTS AS 
+   select c.custid, c.first_name, c.last_name,
+          f.fraud_status, f.fraud_reason, f.fraud_comment
+   from   frauds F 
+   join customers C on f.fraudid = c.fraudid
+   where f.fraud_status = 'Yes'
+;
+select *
+from vw25_fraud_clients 
+;
+
+----- VIEW26 VW26_ALL_DATA   SELECTION FROM CUSTOMERS, RISK, 
+-----                        DOCUMENTS, DEOSITS, WITHDRAWALS, COMPLIANCE, 
+-----                        BONUSES, FRAUDS 
+
+select c.last_name,
+       r.blacklisted,
+       d.poi,
+       dep.deposit_amount,
+       wd. withdrawal_amount, 
+       com.status,
+       b.bonusid,
+       f.fraud_status
+from customers C 
+left join risk R         on c.riskid    = r.riskid
+left join documents D    on c.docid     = d.docid
+left join deposits DEP   on c.depositid = dep.depositid
+left join withdrawals WD on c.wdid      = wd.wdid
+left join compliance COM on c.complid   = com.complid
+left join bonuses B      on c.bonusid   = b.bonusid
+left join frauds  F      on c.fraudid   = f.fraudid
+;
