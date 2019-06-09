@@ -1,0 +1,13 @@
+
+----- SELECT STATEMENTS 
+
+select * from customers;
+select * from risk;
+select * from joint_account;
+select * from history;
+select * from documents;
+select * from deposits;
+select * from withdrawals;
+select * from compliance;
+select * from bonuses;
+select * from frauds;
