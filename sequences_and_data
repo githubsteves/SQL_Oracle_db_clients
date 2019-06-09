@@ -1,0 +1,616 @@
+
+----- SEQUENCES AND DATA 
+
+----- SEQUENCE TABLE RISK 
+
+create sequence seq_risk start with 101
+;
+
+----- INSERT DATA INTO TABLE RISK 
+
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'Yes' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'Yes' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'Yes' );
+
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'Yes' );    
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );     
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'No' ); 
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'Yes' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'Yes' );
+
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'Yes' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'Yes' );   
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );  
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'No' );    
+
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' ); 
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'No' );   
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'No' );   
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'Yes' ); 
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'Yes' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'No' );
+
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'Yes' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'Yes' , 'No' , 'No' );
+insert into risk (riskid, deposit_allowed, blacklisted, dealing_risk) values ( (seq_risk.nextval), 'No' , 'Yes' , 'No' );
+
+----- SEQUENCE TABLE JOINT_ACCOUNT
+
+create sequence seq_joint_account start with 201 
+;
+
+----- INSERT DATA INTO TABLE JOINT_ACCOUNT 
+
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'Active' , 1005 );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'Active' , 1004 );
+
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'Inactive' , 1013 );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'Inactive' , 1012 );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+insert into joint_account ( jaid, status, with_custid ) values ( (seq_joint_account.nextval), 'No' , null );
+
+
+----- SEQUENCE TABLE HISTORY 
+
+create sequence seq_history start with 301
+;
+
+----- INSERT DATA INTO TABLE HISTORY 
+
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/15' , 'yyyy/mm/dd')) , 'Call' , 'ready to deposit 100 USD' );
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/04' , 'yyyy/mm/dd')) , 'Email' , 'regarding open position EUR/USD' );
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/11' , 'yyyy/mm/dd')) , 'Email' , 'communication with the salesman ' );
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/05' , 'yyyy/mm/dd')) , 'Email' , 'sent documents for the joint account, wants to speak with broker' );
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/28' , 'yyyy/mm/dd')) , 'Call' , 'we spoke, wants to make another deposit in her husbands account' )
+;
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/01' , 'yyyy/mm/dd')) , 'Chat' , 'chat with CS, cant log in into the platform');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/28' , 'yyyy/mm/dd')) , 'Call' , 'spoke with broker around 30 minutes for USD/JPY ');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/14' , 'yyyy/mm/dd')) , 'Chat' , 'cant upload documents in the system, checking with compliance');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/27' , 'yyyy/mm/dd')) , 'Email' , 'blacklisted can not deposit wants to know why');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/08' , 'yyyy/mm/dd')) , 'Chat' , 'left the chat')
+;
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/19' , 'yyyy/mm/dd')) , 'Call' , 'no answer');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/01' , 'yyyy/mm/dd')) , 'Email' , 'ready to trading with the joint account');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/22' , 'yyyy/mm/dd')) , 'Call' , 'angry, furious that we close the joint account');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/10' , 'yyyy/mm/dd')) , 'Email' , 'to compliance - wants to know what happened with the documents ');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/23' , 'yyyy/mm/dd')) , 'Call' , 'no answer')
+;
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/01' , 'yyyy/mm/dd')) , 'Call' , 'wants to start trading as soon as possible, will call him tomorrow');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/12' , 'yyyy/mm/dd')) , 'Chat' , 'left the chat ');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/25' , 'yyyy/mm/dd')) , 'Email' , 'ready to deposit more funds into the account ');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/14' , 'yyyy/mm/dd')) , 'Call' , 'saw some advertisment and interested what is all about, low potential');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/08' , 'yyyy/mm/dd')) , 'Call' , 'bad connection, will call him later ')
+;
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/21' , 'yyyy/mm/dd')) , 'Chat' , 'chat in Arabic - transfer to arabic speaker');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/03' , 'yyyy/mm/dd')) , 'Chat' , 'interested in what is Call position');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/14' , 'yyyy/mm/dd')) , 'Call' , 'an American living in Dubai, wants to deposit and start trading , probably FATCA!!!');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/30' , 'yyyy/mm/dd')) , 'Call' , 'wants to speak with Compliance department');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/29' , 'yyyy/mm/dd')) , 'Call' , 'no answer ')
+;
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/08' , 'yyyy/mm/dd')) , 'Email' , 'does not want to accept the Terms and Conditions ');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/31' , 'yyyy/mm/dd')) , 'Chat' , 'will send his Bank Statement and CC');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/23' , 'yyyy/mm/dd')) , 'Chat' , 'canadian living in Australia,working in financial company , has some potential');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/06/12' , 'yyyy/mm/dd')) , 'Call' , 'wants to speak later');
+insert into history ( historyid, history_date, history_type, history_comment ) values ( (seq_history.nextval), (to_date('2018/05/16' , 'yyyy/mm/dd')) , 'Call' , 'an American - FATCA - checking with Compliance')
+;
+
+----- SEQUENCE TABLE DEPOSITS
+
+create sequence seq_deposits start with 501
+;
+
+----- INSERT DATA INTO TABLE DEPOSITS 
+
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/05' ,'yyyy/mm/dd')), 'Approved' , 200 , 'GBP' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/10' ,'yyyy/mm/dd')), 'Approved' , 1000 , 'GBP' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/14' ,'yyyy/mm/dd')), 'Failed' , 100 , 'GBP' , 'CC' , 'failed due to not honour ');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/27' ,'yyyy/mm/dd')), 'Pending' , 500 , 'GBP' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/04' ,'yyyy/mm/dd')), 'Approved' , 1000 , 'GBP' , 'Bank wire' , 'bank transfer from Lloyds bank')
+;
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/21' ,'yyyy/mm/dd')), 'Approved' , 250 , 'EUR' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/30' ,'yyyy/mm/dd')), 'Approved' , 500 , 'EUR' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/09' ,'yyyy/mm/dd')), 'Approved' , 1000 , 'EUR' , 'Skrill' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/27' ,'yyyy/mm/dd')), 'Failed' , 250 , 'EUR' , 'CC' , 'failed due to not honour');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/20' ,'yyyy/mm/dd')), 'Approved' , 100 , 'EUR' , 'Bank wire' , 'no')
+;
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/26' ,'yyyy/mm/dd')), 'Approved' , 2000 , 'EUR' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/11' ,'yyyy/mm/dd')), 'Approved' , 2000 , 'EUR' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/25' ,'yyyy/mm/dd')), 'Approved' , 3000 , 'EUR' , 'Bank wire' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/30' ,'yyyy/mm/dd')), 'Failed' , 10000 , 'EUR' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/04' ,'yyyy/mm/dd')), 'Pending' , 5000 , 'EUR' , 'CC' , 'will refund him ')
+;
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/22' ,'yyyy/mm/dd')), 'Failed' , 100 , 'EUR' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/27' ,'yyyy/mm/dd')), 'Failed' , 1000 , 'USD' , 'Skrill' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/30' ,'yyyy/mm/dd')), 'Approved' , 250 , 'EUR' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/06' ,'yyyy/mm/dd')), 'Approved' , 2000 , 'EUR' , 'Bank wire' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/25' ,'yyyy/mm/dd')), 'Pending' , 200 , 'EUR' , 'Skrill' , 'no')
+;
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/23' ,'yyyy/mm/dd')), 'Approved' , 100000 , 'USD' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/02' ,'yyyy/mm/dd')), 'Approved' , 25000 , 'USD' , 'Bank wire' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/15' ,'yyyy/mm/dd')), 'Pending' , 15000 , 'USD' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/13' ,'yyyy/mm/dd')), 'Failed' , 50000 , 'USD' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/26' ,'yyyy/mm/dd')), 'Approved' , 25000 , 'USD' , 'CC' , 'no')
+;
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/29' ,'yyyy/mm/dd')), 'Approved' , 150 , 'USD' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/04' ,'yyyy/mm/dd')), 'Failed' , 500 , 'USD' , 'Skrill' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/25' ,'yyyy/mm/dd')), 'Approved' , 1000 , 'CAD' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/03/30' ,'yyyy/mm/dd')), 'Approved' , 500 , 'USD' , 'CC' , 'no');
+insert into deposits (depositid, deposit_date, deposit_status, deposit_amount, currency, method, deposit_comment) values ((seq_deposits.nextval), (to_date ( '2018/04/16' ,'yyyy/mm/dd')), 'Pending' , 1000 , 'USD' , 'CC' , 'an American, will refund him according to regulations')
+;
+
+----- SEQUENCE TABLE DEPOSITS
+
+create sequence seq_withdrawals start with 601
+;
+
+----- INSERT DATA INTO TABLE WITHDRAWALS 
+
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/08' , 'yyyy/mm/dd')) , 'Approved' , 200 , 'GBP' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/18' , 'yyyy/mm/dd')) , 'Rejected' , 2000 , 'GBP' , 'Bank wire' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/31' , 'yyyy/mm/dd')) , 'Rejected' , 100 , 'GBP' , 'Skrill' , 'doesn’t have any funds in the acc' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/22' , 'yyyy/mm/dd')) , 'Pending' , 100 , 'GBP' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/24' , 'yyyy/mm/dd')) , 'Approved' , 500 , 'GBP' , 'Bank wire' , 'no' )
+;
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/24' , 'yyyy/mm/dd')) , 'Rejected' , 250 , 'EUR' , 'CC' , 'has only 200 in the acc' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/04' , 'yyyy/mm/dd')) , 'Approved' , 100 , 'EUR' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/09' , 'yyyy/mm/dd')) , 'Approved' , 1000 , 'EUR' , 'Skrill' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/22' , 'yyyy/mm/dd')) , 'Pending' , 100 , 'EUR' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/24' , 'yyyy/mm/dd')) , 'Rejected' , 1000 , 'EUR' , 'Bank wire' , 'has only 200 in the acc ' )
+;
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/20' , 'yyyy/mm/dd')) , 'Approved' , 1000 , 'EUR' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/22' , 'yyyy/mm/dd')) , 'Approved' , 5000 , 'EUR' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/18' , 'yyyy/mm/dd')) , 'Rejected' , 500 , 'EUR' , 'Bank wire' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/31' , 'yyyy/mm/dd')) , 'Pending' , 1000 , 'EUR' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/27' , 'yyyy/mm/dd')) , 'Pending' , 5000 , 'EUR' , 'CC' , 'no' )
+;
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/01' , 'yyyy/mm/dd')) , 'Rejected' , 100 , 'EUR' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/26' , 'yyyy/mm/dd')) , 'Rejected' , 1000 , 'USD' , 'Skrill' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/24' , 'yyyy/mm/dd')) , 'Approved' , 50 , 'EUR' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/06' , 'yyyy/mm/dd')) , 'Approved' , 1200 , 'EUR' , 'Bank wire' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/15' , 'yyyy/mm/dd')) , 'Rejected' , 200 , 'EUR' , 'Skrill' , 'no' )
+;
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/27' , 'yyyy/mm/dd')) , 'Approved' , 50000 , 'USD' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/14' , 'yyyy/mm/dd')) , 'Approved' , 15000 , 'USD' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/20' , 'yyyy/mm/dd')) , 'Pending' , 15000 , 'USD' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/22' , 'yyyy/mm/dd')) , 'Rejected' , 50000 , 'USD' , 'CC' , 'has some issues, does not know where are his money' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/07/06' , 'yyyy/mm/dd')) , 'Approved' , 2000 , 'USD' , 'CC' , 'no' )
+;
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/01' , 'yyyy/mm/dd')) , 'Pending' , 100 , 'USD' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/31' , 'yyyy/mm/dd')) , 'Rejected' , 250 , 'USD' , 'Skrill' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/31' , 'yyyy/mm/dd')) , 'Approved' , 500 , 'CAD' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/22' , 'yyyy/mm/dd')) , 'Approved' , 450 , 'USD' , 'CC' , 'no' );
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment) values ((seq_withdrawals.nextval), (to_date( '2018/08/24' , 'yyyy/mm/dd')) , 'Pending' , 1000 , 'USD' , 'CC' , 'pending WD, will refund the client' )
+;
+
+----- SEQUENCE TABLE TRADING_PLATFORMS 
+
+create sequence seq_trading_platforms start with 701
+;
+
+----- INSERT DATA INTO TABLE TRADING_PLATFORMS
+
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'GBP' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'GBP' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'GBP' , 'TradeStation');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'GBP' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'GBP' , 'MT5');
+
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'EUR' , 'MT4');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'EUR' , 'MT4');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'EUR' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'EUR' , 'TradeStation');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'EUR' , 'MT5');
+
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'EUR' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'EUR' , 'MT4');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'EUR' , 'MT4');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'EUR' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'EUR' , 'MT4');
+
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'EUR' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'USD' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'EUR' , 'MT4');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'EUR' , 'TradeStation');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'EUR' , 'TradeStation');
+
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'USD' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'USD' , 'MT4');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'USD' , 'MT4');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'USD' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'USD' , 'TradeStation');
+
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'USD' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Inactive' , 'USD' , 'MT4');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'CAD' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'USD' , 'MT5');
+insert into trading_platforms (tpid, status, currency, type) values ((seq_trading_platforms.nextval), 'Active' , 'USD' , 'MT5');
+
+
+----- SEQUENCE TABLE FRAUDS 
+
+create sequence seq_frauds start with 8001
+;
+
+----- INSERT DATA INTO TABLE FRAUDS
+
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'Yes' , 'Fake documents' , 'fake Bank Statement');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'Yes' , 'Criminal-narcotics' , 'boss of the narcotics group in Spain .2015 were in proson for 2 years. No further report data');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'Yes' , 'Criminal-financial crimes' , 'tax evasion 10000 USD');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'Yes' , 'Criminal-financial crimes' , 'provide financing to individual terrorists or non state actors');
+
+
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment)values  ((seq_frauds.nextval), 'Yes' , 'Criminal-narcotics' , 'posses and distribute of narcotics (cocaine 200 g and amhetamines 5kg). Were in prison fo 1 yr. No data');
+
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'Yes' , 'Criminal-financial crimes' , 'insurance fraud');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'Yes' , 'Fake documents' , 'fake ID card');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'Yes' , 'Criminal-narcotics' , 'no data in the system');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+insert into frauds (fraudid, fraud_status, fraud_reason, fraud_comment) values ((seq_frauds.nextval), 'No' , 'No' , 'no');
+
+
+----- SEQUENCE TABLE DOCUMENTS 
+
+create sequence seq_documents start with 401
+;
+
+----- INSERT DATA INTO TABLE DOCUMENTS 
+
+----- ABBREVIATIONS
+----- poi-Proof of Identity, por- Proof of residence, cc- Credit Card, ccs- Credit Card Statement, pod- Proof of deposit, poba- Proof of bank account
+
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Driving License' , 'Bank Statement' , 'CC_1124' , 'CCS_1124' , 'No' , 'No' , 'National Health Insurance');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Driving License' , 'Bank Statement' , 'CC_6015' , 'CCS_1200' , 'No' , 'No' , 'Tax Statement');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'No' , 'National Health Insurance' , 'CC_8880' , 'No' , 'No' , 'No' , 'CC_2011');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Driving License' , 'Bank Statement' , 'CC_2018' , 'CCS_4400' , 'No' , 'No' , 'National Pension Insurance');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Driving License' , 'Tax Statement' , 'No' , 'No' , 'Yes' , 'Yes' , 'SWIFT')
+;
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'No' , 'CC_5522' , 'No' , 'No' , 'No' , 'TIN');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'Bank Statement' , 'CC_6688' , 'CCS_6688' , 'No' , 'No' , 'Electricity Bill');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'Phone Bill' , 'No' , 'No' , 'Yes' , 'No' , 'SWIFT');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'No' , 'No' , 'CC_9134' , 'CCS_9134' , 'No' , 'No' , 'No');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Passport' , 'No' , 'No' , 'No' , 'Yes' , 'Yes' , 'ID card')
+;
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'Electricity Bill' , 'CC_1239' , 'CCS_1239' , 'No' , 'No' , 'Passport');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'Water Bill' , 'CC_7390' , 'CCS_7390' , 'No' , 'No' , 'Proof of Joint Bank Account');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'Bank Statement' , 'No' , 'No' , 'Yes' , 'Yes' , 'Joint Account Form');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'No' , 'No' , 'CC_0050' , 'CCS_0050' , 'No' , 'No' , 'CC_9994');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'No' , 'Electricity Bill' , 'CC_3537' , 'CCS_3537' , 'No' , 'No' , 'Phone Bill')
+;
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Passport' , 'No' , 'CC_9103' , 'CCS_9930' , 'No' , 'No' , 'Driving License');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'No' , 'No' , 'No' , 'Yes' , 'No' , 'POD');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'Internet Bill' , 'CC_2924' , 'No' , 'No' , 'No' , 'Water Bill');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Driving License' , 'Phone Bill' , 'No' , 'No' , 'Yes' , 'Yes' , 'SWIFT');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'No' , 'No' , 'No' , 'Yes' , 'No' , 'No')
+;
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Passport' , 'Bank Statement' , 'CC_1618' , 'CCS_1618' , 'No' , 'No' , 'CC_5633');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Passport' , 'Electricity Bill' , 'CC_0903' , 'No' , 'No' , 'No' , 'CC_6200');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Passport' , 'Phone Bill' , 'CC_7573' , 'No' , 'No' , 'No' , 'Bank Statement');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'No' , 'Bank Statement' , 'CC_6664' , 'CCS_6664' , 'No' , 'No' , 'Phone Bill');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'Gas Bill' , 'CC_5551' , 'No' , 'No' , 'No' , 'Passport')
+;
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'ID card' , 'No' , 'CC_0002' , 'CCS_0002' , 'No' , 'No' , 'CC_3400');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'No' , 'Electricity Bill' , 'No' , 'No' , 'Yes' , 'No' , 'No');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Passport' , 'Bank Statement' , 'CC_4422' , 'No' , 'No' , 'No' , 'Phone Bill');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Passport' , 'National Health Insurance' , 'CC_3102' , 'No' , 'No' , 'No' , 'National Pension Insurance');
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) values ((seq_documents.nextval), 'Passport' , 'Phone Bill' , 'CC_5905' , 'No' , 'No' , 'No' , 'CC_2020');
+
+
+----- SEQUENCE TABLE FRAUDS 
+
+create sequence seq_compliance start with 801
+;
+
+----- INSERT DATA INTO TABLE COMPLIANCE 
+
+-----ABBREVIATIONS
+-----fatca- Foreign Account Tax Compliance Act(only USA), gdpr- General Data Protection Regulation, pep- Political Exposed Person
+-----aml - Anti-Money Laundering, tandc- Terms and Conditions, tin- Tax Identification Number 
+
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'High' , 'Yes' , 'Nr: 5566890010RM');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: 6234567890SS');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'Yes' , 'Yes' , 'No' , 'Medium' , 'No' , 'Nr: 9090789034QA');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: 1012335543MN');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: 0984532228PB')
+;
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Partial Compliant' , 'No' , 'No' , 'No' , 'Low' , 'Yes' , 'Nr: 55566699AZ');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: 16216255JJ');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'Yes' , 'High' , 'Yes' , 'Nr: 00220060KX');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'No' , 'No' , 'No' , 'High' , 'No' , 'Nr: 18900458LV');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Partial Compliant' , 'No' , 'Yes' , 'No' , 'High' , 'Yes' , 'Nr: 87811199FH')
+;
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: ALTMRA55R0699K85R5');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: ZTTALF56M9918M12A1');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: ZTTANT78R3319V13M5');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'Yes' , 'Yes' , 'Yes' , 'Medium ' , 'No' , 'Nr: DBISBN11K8843P65L9');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'Yes' , 'No' , 'No' , 'High' , 'Yes' , 'Nr: ALMEMN77T4301Z18O8')
+;
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'No' , 'Yes' , 'No' , 'High' , 'No' , 'Nr: 901015990012');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'No' , 'No' , 'No' , 'High' , 'No' , 'Nr: 850625665584');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'Yes' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: 800105328854');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'No' , 'No' , 'Low' , 'Yes' , 'Nr: 650822654553');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Partial Compliant' , 'Yes' , 'No' , 'No' , 'Low' , 'Yes' , 'Nr: 950505676520')
+;
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Medium' , 'Yes' , 'Nr: 34567832444');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'Yes' , 'Low' , 'Yes' , 'Nr: 8876001275DG');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'Yes' , 'No' , 'No' , 'Low' , 'No' , 'Nr: 3098654823SQ');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'No' , 'Yes' , 'No' , 'Medium' , 'No' , 'Nr: 00234654478');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: 66678654226')
+;
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Partial Compliant' , 'No' , 'No' , 'No' , 'Medium ' , 'Yes' , 'Nr: 18678567');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'Yes' , 'Yes' , 'No' , 'High' , 'No' , 'Nr: 22300999');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'No' , 'No' , 'Low' , 'Yes' , 'Nr: 55348765HT');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Compliant' , 'No' , 'No' , 'No' , 'Low' , 'Yes' , 'Nr: 97457823ES');
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) values ((seq_compliance.nextval), 'Non Compliant' , 'Yes' , 'Yes' , 'No' , 'Low' , 'Yes' , 'Nr: 5098654853NF')
+;
+
+----- SEQUENCE TABLE BONUSES 
+
+create sequence seq_bonuses start with 901
+;
+
+----- INSERT DATA INTO TABLE BONUSES
+----- ABBREVIATIONS:
+----- ftd- First Time Deposit, compl- Compliance, xmas- Christmas
+
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'GBP' , 15 , 25 , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'GBP' , 15 , 25 , 25 , 250 , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'GBP' , null , null , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'GBP' , null , 25 , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'GBP' , 15 , 25 , 25 , 250 , null )
+;
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , 250 , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , null , null , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , null , null )
+;
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , 500 , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , 500 , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , 1000 , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , null , null , null , null , 2000 );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , null , null , null , null , null )
+;
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , null , null , null , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , null , null , null , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , 15 , 25 , 25 , 500 , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'EUR' , null , 25 , 25 , null , null )
+;
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , 15 , 25 , 25 , 5000 , 15000 );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , 15 , 25 , 25 , 250 , 5000 );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , null , null , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , null , null , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , 15 , 25 , 25 , 2500 , 5000 )
+;
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , 15 , 25 , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , null , null , null , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'CAD' , 15 , 25 , 25 , 250 , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , 15 , 25 , 25 , null , null );
+insert into bonuses (bonusid, currency, ftd_bonus, compl_bonus, xmas_bonus, one_thousand_bonus, ten_thousand_bonus) values ((seq_bonuses.nextval), 'USD' , null , null , 25 , null , null )
+;
+
+----- SEQUENCE TABLE CUSTOMERS
+
+create sequence seq_customers start with 1001
+;
+
+----- INSERT DATA INTO TABLE CUSTOMERS
+
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+            riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Mathew' , 'Willson' , 'United Kingdom' , 'English' , 'British' , 'male' , (to_date( '1986/06/23' , 'yyyy/mm/dd')), 'Str. Droop 30B, Kensal Town' , 'London' , '+44562344518' , 'mwilson@email.com' , '192.168.255.255'
+        ,101,201,301,401,501,601,701,801,901,8001)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+            riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Melissa' , 'Mbappe' , 'United Kingdom' , 'English' , 'British' , 'female' , (to_date( '1970/01/10' , 'yyyy/mm/dd')), 'Str. Athlone 19C, Kentish Town' , 'London' , '+44121688901' , 'mmbappe@email.com' , '188.33.0.100.144'
+        ,102,202,302,402,502,602,702,802,902,8002)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+            riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'John' , 'Dowson' , 'United Kingdom' , 'English' , 'British' , 'male' , (to_date( '1975/09/22' , 'yyyy/mm/dd')), 'Str. Spring 11A, Burnage' , 'Manchester' , '+44209088902' , 'jdownson@email.com' , '216.58.216.164.187'
+        ,103,203,303,403,503,603,703,803,903,8003)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Dave' , 'Smith' , 'United Kingdom' , 'English' , 'British' , 'male' , (to_date( '1960/02/23' , 'yyyy/mm/dd')), 'Str. Bedford  5B, Croydon' , 'London' , '+44115643290' , 'dsmith@email.com' , '100.99.199.214.189'
+        ,104,204,304,404,504,604,704,804,904,8004)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Alison' , 'Smith' , 'United Kingdom' , 'English' , 'British' , 'female' , (to_date( '1983/08/30' , 'yyyy/mm/dd')), 'Str. Bedford  5B, Croydon' , 'London' , '+44456766669' , 'asmith@email.com' , '104.56.177.208.88'
+        ,105,205,305,405,505,605,705,805,905,8005)
+;
+
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Emmanuel' , 'Lozano' , 'Spain' , 'Spanish' , 'Spanish' , 'male' , (to_date( '1999/11/23' , 'yyyy/mm/dd')), 'Str. Calle Laurel 10, Chueca' , 'Madrid' , '+34187655533' , 'elozano@email.com' , '107.144.34.217.98'
+        ,106,206,306,406,506,606,706,806,906,8006)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Juan' , 'Pablo' , 'Spain' , 'Spanish' , 'Spanish' , 'male' , (to_date( '1994/05/16' , 'yyyy/mm/dd')), 'Str. Calle Braille 58, Valverde' , 'Madrid' , '+34333888999' , 'jpablo@email.com' , '99.88.155.166.167'
+        ,107,207,307,407,507,607,707,807,907,8007)
+;       
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Alejandro' , 'Del Real' , 'Spain' , 'Spanish' , 'Spanish' , 'male' , (to_date( '1997/03/19' , 'yyyy/mm/dd')), 'Str.  Ramba del Prat 77, Gracia' , 'Barcelona' , '+34113300008' , 'adelreal@email.com' , '77.80.218.298.128'
+        ,108,208,308,408,508,608,708,808,908,8008)
+;  
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Gabriel' , 'Alonso' , 'Spain' , 'Spanish' , 'Spanish' , 'male' , (to_date( '1950/08/01' , 'yyyy/mm/dd')), 'Str. Calle Antioquia 2, Santa Clara' , 'Sevilla' , '+34208989890' , 'galonso@email.com' , '34.00.165.299.187'
+        ,109,209,309,409,509,609,709,809,909,8009)
+;  
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Ignacio' , 'Martinez Pelayo' , 'Spain' , 'Spanish' , 'Spanish' , 'male' , (to_date( '1969/02/18' , 'yyyy/mm/dd')), 'Str. Calle Bielsa 97, Barajas' , 'Madrid' , '+34232425260' , 'imartinezpelayo@email.com' , '100.18.12.123.990'
+        ,110,210,310,410,510,610,710,810,910,8010)
+; 
+
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Maura' , 'Altieri' , 'Italy' , 'Italian' , 'Italian' , 'female' , (to_date( '1985/06/25' , 'yyyy/mm/dd')), 'Str. Via Spalato  16, Zona Zara' , 'Milano' , '+39889900008' , 'maltieri@email.com' , '199.218.66.177.16'
+        ,111,211,311,411,511,611,711,811,911,8011)
+; 
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Alfonso' , 'Zotti' , 'Italy' , 'Italian' , 'Italian' , 'male' , (to_date( '1984/05/19' , 'yyyy/mm/dd')), 'Str. Via Lima  6, Municipio II' , 'Rome' , '+39345678888' , 'alfzotti@email.com' , '190.198.196.195.44'
+        ,112,212,312,412,512,612,712,812,912,8012)
+; 
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Antonio' , 'Zotti' , 'Italy' , 'Italian' , 'Italian' , 'male' , (to_date( '1984/03/27' , 'yyyy/mm/dd')), 'Str. Via Metauro  55, Municipio II' , 'Rome' , '+39556655667' , 'antzotti@email.com' , '123.234.127.77.66'
+        ,113,213,313,413,513,613,713,813,913,8013)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Sebastiano' , 'De Bernardi' , 'Italy' , 'English' , 'British' , 'male' , (to_date( '1960/02/23' , 'yyyy/mm/dd')), 'Str. Via Agostina Palesa 13' , 'Padova' , '+39110334452' , 'sdebernardi@email.com' , '189.187.186.231.77'
+        ,114,214,314,414,514,614,714,814,914,8014)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Emmanuel' , 'Alma' , 'Italy' , 'Italian' , 'Italian' , 'male' , (to_date( '1978/10/11' , 'yyyy/mm/dd')), 'Str. Via Tasso  8, Vomero' , 'Neapol' , '+39234565433' , 'ealma@email.com' , '234.165.65.64.64'
+        ,115,215,315,415,515,615,715,815,915,8015)
+;
+
+
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Mario' , 'Asenov' , 'Bulgaria' , 'Bulgarian' , 'Bulgarian' , 'male' , (to_date( '1990/10/15' , 'yyyy/mm/dd')), 'Str. Tsar Ivan Asen II  22, Yavorov' , 'Sofia' , '+3598858214778' , 'masenov@email.com' , '64.63.128.189.187'
+        ,116,216,316,416,516,616,716,816,916,8016)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Todor' , 'Ivanov' , 'Bulgaria' , 'Bulgarian' , 'Bulgarian' , 'male' , (to_date( '1985/06/25' , 'yyyy/mm/dd')), 'Str. Gotse Delchev 10, Lylin' , 'Sofia' , '+3598876675432' , 'tivanov@email.com' , '190.23.24.176.165'
+        ,117,217,317,417,517,617,717,817,917,8017)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Stoyan' , 'Mavrodiev' , 'Bulgaria' , 'Bulgarian' , 'Bulgarian' , 'male' , (to_date( '1980/05/01' , 'yyyy/mm/dd')), 'Str. Mesta 66, Lazur' , 'Burgas' , '+3598854435554' , 'smavrodiev@email.com' , '201.233.54.76.78'
+        ,118,218,318,418,518,618,718,818,918,8018)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Maria' , 'Boyanova' , 'Bulgaria' , 'Bulgarian' , 'Bulgarian' , 'female' , (to_date( '1965/08/22' , 'yyyy/mm/dd')), 'Str. Sini kamani, Drujhba' , 'Sliven' , '+3598857762218' , 'mboyanova@email.com' , '156.189.123.66.77'
+        ,119,219,319,419,519,619,719,819,919,8019)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Adrian' , 'Zdravkov' , 'Bulgaria' , 'Bulgarian' , 'Bulgarian' , 'male' , (to_date( '1995/05/05' , 'yyyy/mm/dd')), 'Str. Asen Georgiev 12, Boyana' , 'Sofia' , '+3598853216667' , 'azdravkov@email.com' , '189.23.105.104.66'
+        ,120,220,320,420,520,620,720,820,920,8020)
+;
+
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Rashid' , 'Khouri' , 'United Arab Emirates' , 'Arabic' , 'Emirian' , 'male' , (to_date( '1978/06/22' , 'yyyy/mm/dd')), 'Str. Jumeirah 123C, Jumeira1' , 'Dubai' , '+9712225556' , 'rkhouri@email.com' , '66.105.167.124.167'
+        ,121,221,321,421,521,621,721,821,921,8021)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Ryan' , 'McKenzee' , 'United Arab Emirates' , 'English' , 'British' , 'male' , (to_date( '1982/07/15' , 'yyyy/mm/dd')), 'Str. Al Abraj 12, Downtown' , 'Dubai' , '+9716668880' , 'rmckenzee@email.com' , '44.167.123.178.187'
+        ,122,222,322,422,522,622,722,822,922,8022)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Amelia' , 'Watson' , 'United Arab Emirates' , 'English' , 'American' , 'female' , (to_date( '1992/09/11' , 'yyyy/mm/dd')), 'Str. Al Khalas 88, Palm Jumeirah' , 'Dubai' , '+1666172344' , 'awatson@email.com' , '122.34.67.187.23'
+        ,123,223,323,423,523,623,723,823,923,8023)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Abdullah' , 'Waseem' , 'United Arab Emirates' , 'Arabic' , 'Emirian' , 'male' , (to_date( '1988/12/23' , 'yyyy/mm/dd')), 'Str. Lima 43, Al Danan' , 'Abu Dhabi' , '+9716543341' , 'awaseem@email.com' , '129.124.11.87.90'
+        ,124,224,324,424,524,624,724,824,924,8024)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Mohammed' , 'Abadi' , 'United Arab Emirates' , 'Arabic' , 'Emirian' , 'male' , (to_date( '1983/07/15' , 'yyyy/mm/dd')), 'Str.  Al  Zahrawi, Deira' , 'Dubai' , '+9719817811' , 'mabadi@email.com' , '67.84.197.56'
+        ,125,225,325,425,525,625,725,825,925,8025)
+;
+
+
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Juan' , 'Vega' , 'Mexico' , 'Spanish' , 'Mexican' , 'male' , (to_date( '1960/10/12' , 'yyyy/mm/dd')), 'Str. Calle Juarez 22, Los Reyes' , 'Mexico City' , '+5212098878' , 'jvega@email.com' , '174.173.65.38.29'
+        ,126,226,326,426,526,626,726,826,926,8026)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Enrique' , 'Martinez' , 'Mexico' , 'Spanish' , 'Mexican' , 'male' , (to_date( '1955/05/05' , 'yyyy/mm/dd')), 'Str. Calle Nueva, 1, San Pedro' , 'Mexico City' , '+5290096776' , 'emartinez@email.com' , '174.56.53.271.89'
+        ,127,227,327,427,527,627,727,827,927,8027)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Hunter' , 'Taylor' , 'Australia' , 'English' , 'Canadian' , 'male' , (to_date( '1989/10/31' , 'yyyy/mm/dd')), 'Str. Albert 5, Downtown' , 'Melbourne' , '+6166678900' , 'htaylor@email.com' , '174.43.78.23.28'
+        ,128,228,328,428,528,628,728,828,928,8028)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Evelyn' , 'Scott' , 'Australia' , 'English' , 'Australian' , 'female' , (to_date( '1981/12/24' , 'yyyy/mm/dd')), 'Str. Pine Grove 15, Malvern' , 'Melbourne' , '+6199777345' , 'escott@email.com' , '123.78.256.19.85'
+        ,129,229,329,429,529,629,729,829,929,8029)
+;
+insert into customers (custid, first_name, last_name, country, language, citizenship, gender, birthday, address, city, phone, email, ip, 
+                       riskid, jaid, historyid, docid, depositid, wdid, tpid, complid, bonusid, fraudid)                     
+values ((seq_customers.nextval), 'Andrew' , 'Davis' , 'Australia' , 'English' , 'American' , 'male' , (to_date( '1981/09/04' , 'yyyy/mm/dd')), 'Str. Crown, 11, Surry Hills' , 'Sydney' , '+1909000455' , 'adavis@email.com' , '45.64.47.118.199'
+        ,130,230,330,430,530,630,730,830,930,8030)
+;
