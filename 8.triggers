@@ -1,0 +1,72 @@
+/
+/
+----- TRIGGERS   
+----- TRIGGER1 BEFORE_INSERT_POI_DOCUMENTS  
+
+CREATE OR REPLACE TRIGGER  BEFORE_INSERT_POI_DOCUMENTS
+   BEFORE INSERT ON DOCUMENTS
+   FOR EACH ROW 
+BEGIN 
+:NEW.POI  :=  :NEW.POI || ' POI' ;
+END;
+/
+
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) 
+values ((seq_documents.nextval), 'Passport' , 'Phone Bill' , 'TEST' , 'TEST' , 'TEST' , 'TEST' , 'TEST');
+
+
+----- TRIGGER2 BEFORE_INSERT_POR_DOCUMENTS 
+
+CREATE OR REPLACE TRIGGER  BEFORE_INSERT_POR_DOCUMENTS
+   BEFORE INSERT ON DOCUMENTS
+   FOR EACH ROW 
+BEGIN 
+:NEW.POR  :=  :NEW.POR || ' POR' ;
+END;
+/
+
+insert into documents (docid, poi, por, cc, ccs, pod, poba, other) 
+values ((seq_documents.nextval), 'Passport' , 'Phone Bill' , 'TEST' , 'TEST' , 'TEST' , 'TEST' , 'TEST');
+
+----- TRIGGER3  BEFORE_INSERT_PEP_COMPLIANCE  
+
+CREATE OR REPLACE TRIGGER  BEFORE_INSERT_PEP_COMPLIANCE
+   BEFORE INSERT ON COMPLIANCE
+   FOR EACH ROW 
+BEGIN 
+:NEW.PEP  :=  :NEW.PEP || ' PEP' ;
+END;
+/
+
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) 
+values ((seq_compliance.nextval), 'TEST' , 'TEST' , 'TEST' , 'No' , 'High' , 'TEST' , 'TEST')
+;
+
+
+----- TRIGGER4  BEFORE_INSERT_AML_COMPLIANCE 
+
+CREATE OR REPLACE TRIGGER  BEFORE_INSERT_AML_COMPLIANCE
+   BEFORE INSERT ON COMPLIANCE
+   FOR EACH ROW 
+BEGIN 
+:NEW.AML  :=  :NEW.AML || ' AML' ;
+END;
+/
+
+insert into compliance (complid, status, fatca, gdpr, pep, aml, tandc, tin) 
+values ((seq_compliance.nextval), 'TEST' , 'TEST' , 'TEST' , 'No' , 'High' , 'TEST' , 'TEST')
+;
+
+----- TRIGGER5   BEFORE_INSERT_AML_WITHDRAWALS 
+
+CREATE OR REPLACE TRIGGER  BEFORE_INSERT_AML_WITHDRAWALS
+   BEFORE INSERT ON WITHDRAWALS
+   FOR EACH ROW 
+BEGIN 
+:NEW.METHOD  :=  :NEW.METHOD || ' Method' ;
+END;
+/
+
+insert into withdrawals (wdid, withdrawal_date, withdrawal_status, withdrawal_amount, currency, method, withdrawal_comment)
+values ((seq_withdrawals.nextval), (to_date( '2018/08/24' , 'yyyy/mm/dd')) , 'TEST' , 1000 , 'TEST' , 'CC' , 'TEST' )
+;
